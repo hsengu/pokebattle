@@ -1,7 +1,10 @@
 :root {
     --primary-color: #68A691;
     --secondary-color: #BFD3C1;
-    --tertiary-color: #FFE5D4;
+    --border-color: #FFE5D4;
+    --text-color: #0f0a0a;
+    --life-line: #A493AA;
+    --bots-color: #ff5757;
 }
 header {
     padding: 20px 35px;
@@ -20,13 +23,13 @@ header {
     font-weight: bold;
     margin: 0;
     font-size: 36px;
-    color: black
+    color: var(--text-color)
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header a {
       text-decoration: none;
-      color: black;
+      color: var(--text-color);
   }
   
   header nav {
@@ -49,7 +52,7 @@ header {
   
   header nav ul li a:hover {
     background: var(--primary-color);
-    color: var(--secondary-color);
+ 
     border-radius: 15px;
     text-shadow: none;
   }
@@ -68,7 +71,7 @@ footer {
     }
     
     footer div {
-    color: black;
+    color: var(--text-color);
     margin: 10px;
     flex: 1;
     width:100%;
