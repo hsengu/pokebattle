@@ -17,6 +17,7 @@ body > footer {
   margin-top: auto;
 }
 
+/*
 header {
     padding: 20px 35px;
     background-color: var(--primary-color);
@@ -34,7 +35,7 @@ header {
     font-weight: bold;
     margin: 0;
     font-size: 36px;
-    color: var(--text-color)
+    color: var(--text-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
@@ -67,17 +68,36 @@ header {
     border-radius: 15px;
     text-shadow: none;
   }
-
-  .navbar {
-    background-color: var(--primary-color);
-  }
+*/
   /*HEADER / NAVBAR STYLE END*/
 
   .hero {
       text-align: center;
   }
-  
-/* FOOTER STYLES START */
+
+.navbar {
+  background-color: var(--primary-color);
+}
+
+#battle-section {
+  margin: 0em;
+}
+
+#stage {
+  height: 100%;
+}
+
+#battle-log {
+  resize: none;
+  width: 100%;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+}
+
+/* FOOTER STYLES START 
 footer {
     background: var(--primary-color);
     width: 100%;
