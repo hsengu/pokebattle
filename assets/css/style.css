@@ -6,6 +6,17 @@
     --life-line: #A493AA;
     --bots-color: #ff5757;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > footer {
+  margin-top: auto;
+}
+
 header {
     padding: 20px 35px;
     background-color: var(--primary-color);
@@ -65,6 +76,7 @@ header {
   .hero {
       text-align: center;
   }
+  
 /* FOOTER STYLES START */
 footer {
     background: var(--primary-color);
