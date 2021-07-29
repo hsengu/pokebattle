@@ -87,6 +87,10 @@ header {
   height: 100%;
 }
 
+.arena {
+  background-color: darkorange; 
+}
+
 #battle-log {
   resize: none;
   width: 100%;
