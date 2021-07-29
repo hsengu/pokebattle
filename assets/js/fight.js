@@ -30,17 +30,18 @@ function showDmg(target, damage) {
         hpBar.removeClass("is-warning");
         hpBar.addClass("is-danger");
     }
+
+    updateLog(target, damage);
 }
 
 function updateLog(target, damage) {
     var attacker = "";
-    var logElement = $("#battle-log");
+    var logElement = $("#battle-log")[0];
 
-    if(target === rival)
-        attacker = $("#player-name").text;
+    if(target === "rival")
+        attacker = $("#player-name")[0].textContent;
     else
-        attacker = $("#rival-name").text;
+        attacker = $("#rival-name")[0].textContent;
 
-    logElement.value(attacker + " attacked " + $(target + "-name") + " for " + damage + " damage." + logElement.value());
-
+    logElement.value = attacker + " attacked " + $("#" + target + "-name")[0].textContent + " for " + damage + " damage.\n" + logElement.value;
 }
