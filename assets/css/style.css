@@ -36,9 +36,12 @@ body > footer {
   max-height: 350px;
 }
 
-#battle-log {
-  resize: none;
-  width: 100%;
+.actions-column, .log-column {
+  min-width: 280px;
+}
+
+#battle-log textarea {
+  font-size: 14px;
 }
 
 .footer {
