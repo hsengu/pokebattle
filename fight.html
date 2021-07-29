@@ -27,29 +27,29 @@
             <div class="navbar-end">
                 <a href="./index.html" class="navbar-item">Home</a>
                 <a href="./choose.html" class="navbar-item">Choose</a>
-                <a href="#" class="navbar-item">Fight</a>
                 <a href="./high-score.html" class="navbar-item">Winners</a>
             </div>
         </div>
     </nav>
 
     <!-- Main section -->
-    <section id="battle-section" class="container columns is-fluid -is-full-height is-vcentered">
+    <section id="battle-section" class="container columns is-fluid -is-full-height is-vcentered is-centered">
         <div class="column">
             <div class="columns is-vcentered is-centered">
                 <div id="stage" class="column">
-                    <div id="stage-columns" class="columns is-mobile">
-                        <div id="challenger-arena" class="column is-half arena">
+                    <div id="stage-columns" class="columns is-mobile is-centered is-vcentered">
+                        <div id="rival-arena" class="column is-half arena">
                             <div class="columns">
                                 <div class="column">
                                     <div class="columns is-mobile">
-                                        <div class="column">
-                                            <progress class="progress is-warning is-small" value="60" max="100">60%</progress>
-                                            <p>HP: 60/100</p>
-                                            <p>Name: Challenger Pokemon</p>
-                                        </div>
-                                        <div class="column">
-                                            <figure class="image is-1by1"></figure>
+                                        <div id="rival-info" class="column">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <progress class="progress is-warning is-small" value="60" max="100">60%</progress>
+                                                    <p>HP: 60/100</p>
+                                                    <p><strong>Kadabra</strong></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="columns is-mobile">
@@ -64,12 +64,20 @@
                             </div>
                         </div>
                         <div class="column is-half arena">
-                            Enemy Pokemon goes here.
+                            <div class="columns has-text-centered is-vcentered">
+                                <div id="rival-pokemon" class="column">
+                                    <img src="https://img.pokemondb.net/sprites/black-white/anim/shiny/kadabra.gif" alt="Kadabra"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-half arena">
-                            Player Pokemon goes here.
+                    <div class="columns is-mobile is-centered is-vcentered">
+                        <div  class="column is-half arena">
+                            <div class="columns is-vcentered">
+                                <div id="player-pokemon" class="column">
+                                    <img src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/pikachu.gif" alt="Pikachu"/>
+                                </div>
+                            </div>
                         </div>
                         <div id="player-arena" class="column is-half arena">
                             <div class="columns">
@@ -83,13 +91,14 @@
                                         </div>
                                     </div>
                                     <div class="columns is-mobile">
-                                        <div class="column">
-                                            <figure class="image is-1by1"></figure>
-                                        </div>
-                                        <div class="column">
-                                                <progress class="progress is-success is-small" value="100" max="100">100%</progress>
-                                                <p>HP: 100/100</p>
-                                                <p>Name: Player Pokemon</p>
+                                        <div id="player-info" class="column">
+                                                <div class="card">
+                                                    <div class="card-content">
+                                                        <progress class="progress is-success is-small" value="100" max="100">100%</progress>
+                                                        <p>HP: 100/100</p>
+                                                        <p><strong>Pikachu</strong></p>
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -98,35 +107,39 @@
                     </div>
                 </div>
                 <div class="column is-one-third">
-                    <div class="columns is-mobile">
-                        <div class="column">
-                            <div class="columns">
+                    <div id="actions" class="card">
+                        <div class="card-content">
+                            <div class="columns is-mobile has-text-centered">
                                 <div class="column">
-                                    <button class="button is-primary">Attack</button>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Attack</button>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Evade</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="columns">
                                 <div class="column">
-                                    <button class="button is-primary">Evade</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="columns">
-                                <div class="column">
-                                    <button class="button is-primary">Placeholder</button>
-                                </div>
-                            </div>
-                            <div class="columns">
-                                <div class="column">
-                                    <button class="button is-primary">Placeholder</button>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Placeholder</button>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Placeholder</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="columns">
                         <div class="column">
-                            <div class="box">Pokemon attacked Pokemon for 40 dmg.</div>
+                            <textarea class="textarea has-fixed-size" readonly>Pikachu attacked Kadabra for 40 dmg.</textarea>
                         </div>
                     </div>
                 </div>
