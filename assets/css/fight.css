@@ -1,0 +1,28 @@
+/* Styling for fight.html page */
+#battle-section {
+    margin: 0em;
+  }
+  
+  #stage {
+    height: 100%;
+    
+  }
+  
+  .arena {
+    width: 100%;
+    max-width: 350px;
+    max-height: 350px;
+  }
+  
+  .actions-column, .log-column {
+    min-width: 280px;
+  }
+  
+  #battle-log textarea {
+    font-size: 14px;
+  }  
+
+#player-pokemon img, #rival-pokemon img {
+    transform-origin: top left;
+    transform: scale(2);
+  }
