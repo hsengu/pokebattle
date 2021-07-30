@@ -18,9 +18,14 @@ body {
   float: right;
 }
 
+.rules h2{
+  text-align: center;
+  font-size: 48px;
+}
+
 .rules p {
   text-align: center;
-  font-size: 36px;
+  font-size: 24px;
 }
 
 .rules ol {
@@ -67,7 +72,7 @@ body {
 .base {
   background: #333;
   height: 80%;
-  width: 80%;
+  width: 100%;
   padding: 10%;
 }
 
