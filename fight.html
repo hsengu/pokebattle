@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/fight.css">
     <title>Pokemon</title>
 </head>
 
@@ -15,7 +16,8 @@
     <nav id="header" class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a href="./index.html" class="navbar-item">
-                <h1 class="title">Pokemon Battle</h1>
+                <span><h1 class="title">Pokemon Battle</h1></span>
+                <span><img src="./assets/image/pikachu-lets-go.png" alt="Pikachu Love"></span>
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="poke-nav">
                 <span aria-hidden="true"></span>
@@ -27,29 +29,29 @@
             <div class="navbar-end">
                 <a href="./index.html" class="navbar-item">Home</a>
                 <a href="./choose.html" class="navbar-item">Choose</a>
-                <a href="#" class="navbar-item">Fight</a>
                 <a href="./high-score.html" class="navbar-item">Winners</a>
             </div>
         </div>
     </nav>
 
     <!-- Main section -->
-    <section id="battle-section" class="container columns is-fluid -is-full-height is-vcentered">
+    <section id="battle-section" class="container columns is-fluid -is-full-height is-vcentered is-centered">
         <div class="column">
             <div class="columns is-vcentered is-centered">
                 <div id="stage" class="column">
-                    <div id="stage-columns" class="columns is-mobile">
-                        <div id="challenger-arena" class="column is-half arena">
+                    <div id="stage-columns" class="columns is-mobile is-centered is-vcentered">
+                        <div id="rival-arena" class="column is-half arena">
                             <div class="columns">
                                 <div class="column">
                                     <div class="columns is-mobile">
-                                        <div class="column">
-                                            <progress class="progress is-warning is-small" value="60" max="100">60%</progress>
-                                            <p>HP: 60/100</p>
-                                            <p>Name: Challenger Pokemon</p>
-                                        </div>
-                                        <div class="column">
-                                            <figure class="image is-1by1"></figure>
+                                        <div id="rival-info" class="column">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <progress id="rival-hp-bar" class="progress is-success is-small" value="100" max="100">100%</progress>
+                                                    <p>HP: <span id="rival-current-hp">100</span> / <span id="rival-max-hp">100</span></p>
+                                                    <p><strong id="rival-name">Kadabra</strong></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="columns is-mobile">
@@ -64,12 +66,20 @@
                             </div>
                         </div>
                         <div class="column is-half arena">
-                            Enemy Pokemon goes here.
+                            <div class="columns has-text-centered is-vcentered">
+                                <div id="rival-pokemon" class="column">
+                                    <img src="https://img.pokemondb.net/sprites/black-white/anim/shiny/kadabra.gif" alt="Kadabra"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-half arena">
-                            Player Pokemon goes here.
+                    <div class="columns is-mobile is-centered is-vcentered">
+                        <div  class="column is-half arena">
+                            <div class="columns is-vcentered">
+                                <div id="player-pokemon" class="column">
+                                    <img src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/pikachu.gif" alt="Pikachu"/>
+                                </div>
+                            </div>
                         </div>
                         <div id="player-arena" class="column is-half arena">
                             <div class="columns">
@@ -84,12 +94,13 @@
                                     </div>
                                     <div class="columns is-mobile">
                                         <div class="column">
-                                            <figure class="image is-1by1"></figure>
-                                        </div>
-                                        <div class="column">
-                                                <progress class="progress is-success is-small" value="100" max="100">100%</progress>
-                                                <p>HP: 100/100</p>
-                                                <p>Name: Player Pokemon</p>
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <progress id="player-hp-bar" class="progress is-success is-small" value="100" max="100">100%</progress>
+                                                    <p>HP: <span id="player-current-hp">100</span> / <span id="player-max-hp">100</span></p>
+                                                    <p><strong id="player-name">Pikachu</strong></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -97,36 +108,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="column is-one-third">
-                    <div class="columns is-mobile">
-                        <div class="column">
-                            <div class="columns">
+                <div class="column is-one-third actions-column">
+                    <div id="actions" class="card">
+                        <div class="card-content">
+                            <div class="columns is-mobile has-text-centered">
                                 <div class="column">
-                                    <button class="button is-primary">Attack</button>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Attack 1</button>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Attack 2</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="columns">
                                 <div class="column">
-                                    <button class="button is-primary">Evade</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="columns">
-                                <div class="column">
-                                    <button class="button is-primary">Placeholder</button>
-                                </div>
-                            </div>
-                            <div class="columns">
-                                <div class="column">
-                                    <button class="button is-primary">Placeholder</button>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Attack 3</button>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <button class="button is-primary">Attack 4</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="columns">
+                    <div class="columns log-column">
                         <div class="column">
-                            <div class="box">Pokemon attacked Pokemon for 40 dmg.</div>
+                            <textarea id="battle-log" class="textarea has-fixed-size" readonly></textarea>
                         </div>
                     </div>
                 </div>
@@ -134,7 +149,7 @@
         </div>
     </section>
     
-    <!-- "FOOTER INFORMTION" STARTS -->
+    <!-- "FOOTER INFORMATION" STARTS -->
     <footer class="footer">
         <div class="columns is-mobile content">
             <span class="column is-four-fifths has-text-left">
@@ -148,6 +163,7 @@
     <!-- "FOOTER INFORMATION" ENDS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/fight.js"></script>
 </body>
 
 </html>
