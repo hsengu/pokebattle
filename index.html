@@ -1,115 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
     <title>Pokemon</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Navbar -->
-    <nav id="header" class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a href="./index.html" class="navbar-item">
-                <h1 class="title">Pokemon Battle</h1>
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="poke-nav">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+    <nav
+      id="header"
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a href="./index.html" class="navbar-item">
+          <h1 class="title">Pokemon Battle</h1>
+        </a>
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="poke-nav"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="poke-nav" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="./index.html" class="navbar-item">Home</a>
+          <a href="./choose.html" class="navbar-item">Choose</a>
+          <a href="./high-score.html" class="navbar-item">Winners</a>
         </div>
-        <div id="poke-nav" class="navbar-menu">
-            <div class="navbar-end">
-                <a href="./index.html" class="navbar-item">Home</a>
-                <a href="./choose.html" class="navbar-item">Choose</a>
-                <a href="./high-score.html" class="navbar-item">Winners</a>
-            </div>
-        </div>
+      </div>
     </nav>
 
     <!-- Main section -->
     <div class="tile is-ancestor">
-        <div class="tile is-4 is-vertical is-parent">
-            <div class="column top-left">
-                <p class="title"> <a href="http://pokemondb.net/pokedex/pikachu"><img
-                            src="https://img.pokemondb.net/sprites/home/shiny/pikachu.png" alt="Pikachu"></a></p>
-            </div>
-            <div class="column bottom-left">
-
-                <p class="title"> <a href="http://pokemondb.net/pokedex/rapidash"><img
-                    src="https://img.pokemondb.net/sprites/black-white/normal/rapidash.png" alt="Rapidash"></a></p>
-               
-            </div>
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="column top-left">
+          <p class="title">
+            <img src="https://img.pokemondb.net/sprites/home/shiny/pikachu.png"
+                alt="Pikachu">
+          </p>
         </div>
-        <div class="column center">
-            <div><img src="./assets/image/1200px-International_Pokémon_logo.svg.png" alt="pokemon"></div>
-            <section class="rules">
-                <h2>Battle Ground</h2>
-                <p>Rules of the Game</p><br>
-                <ol>
-                    <li>Select your partner for Battle!</li>
-                    <li>Choose different attacks and battle your Rival!</li>
-                    <li>Defeat your Rival’s Pokemon</li>
-                    <li>Click the Pokemon ball to become the best there ever was!</li>
-        
-
-                </ol>
-            
-                <!-- used pureCSS https://codepen.io/thewizardjs/pen/GVrJNE pokebal radio button and adapted it to work on our project -->
-
-                <div class="btn-section">
-                    <div id="click-round">
-                        <div class="options">
-                            <div class="option faded" id="option1">
-                              <div class="pokeball unselected">
-                                <div class="upper-half"> </div>
-                                <div class="lower-half"> </div>
-                                <div class="base"> </div>
-                                <div class="inner-circle"> </div>
-                                <div class="indicator visible"> </div>
-                                <div class="indicator-inner"> </div>
-                              </div>
-                  
-                            </div> 
-                </section>
-            </section>
-
+        <div class="column bottom-left">
+          <p class="title">
+            <a href="http://pokemondb.net/pokedex/rapidash"
+              ><img
+                src="https://img.pokemondb.net/sprites/black-white/normal/rapidash.png"
+                alt="Rapidash"
+            /></a>
+          </p>
         </div>
-        <div class="tile is-4 is-vertical is-parent">
-            <div class="column top-right">
-                <p class="title"> <a href="http://pokemondb.net/pokedex/charizard"><img
-                            src="https://img.pokemondb.net/sprites/black-white/normal/charizard.png"
-                            alt="Charizard"></a></p>
-            </div>
-            <div class="column bottom-right">
-                <p class="title"><a href="http://pokemondb.net/pokedex/cubone"><img
-                    src="https://img.pokemondb.net/sprites/sun-moon/normal/cubone.png" alt="Cubone"></a></p>
-            </div>
+      </div>
+      <div class="column center">
+        <div>
+          <img
+            src="./assets/image/1200px-International_Pokémon_logo.svg.png"
+            alt="pokemon"
+          />
         </div>
+        <section class="rules">
+          <h2>Battle Ground</h2>
+          <p>Rules of the Game</p>
+          <br />
+          <ol>
+            <li>Select your partner for Battle!</li>
+            <li>Choose different attacks and battle your Rival!</li>
+            <li>Defeat your Rival’s Pokemon</li>
+            <li>Click the Pokemon ball to become the best there ever was!</li>
+          </ol>
+
+          <!-- used pureCSS https://codepen.io/thewizardjs/pen/GVrJNE pokebal radio button and adapted it to work on our project -->
+
+          <div class="btn-section"><a href="./choose.html"</a>
+            <div id="click-round" >
+              <div class="options">
+                <div class="option faded" id="option1">
+                  <div class="pokeball unselected">
+                    <div class="upper-half"></div>
+                    <div class="lower-half"></div>
+                    <div class="base"></div>
+                    <div class="inner-circle"></div>
+                    <div class="indicator visible"></div>
+                    <div class="indicator-inner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="column top-right">
+          <p class="title">
+            <a href="http://pokemondb.net/pokedex/charizard"
+              ><img
+                src="https://img.pokemondb.net/sprites/black-white/normal/charizard.png"
+                alt="Charizard"
+            /></a>
+          </p>
+        </div>
+        <div class="column bottom-right">
+          <p class="title">
+            <a href="http://pokemondb.net/pokedex/cubone"
+              ><img
+                src="https://img.pokemondb.net/sprites/sun-moon/normal/cubone.png"
+                alt="Cubone"
+            /></a>
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- "FOOTER INFORMTION" STARTS -->
     <footer class="footer">
-        <div class="columns is-mobile content">
-            <span class="column is-four-fifths has-text-left">
-                <strong>Created By</strong> Denise Tuominen, George Ngo, Hannah Roddy & Hok Uy
-            </span>
-            <span class="column has-text-right">
-                <strong>&copy; 2021 Pokemon Battle</strong>
-            </span>
-        </div>
+      <div class="columns is-mobile content">
+        <span class="column is-four-fifths has-text-left">
+          <strong>Created By</strong> Denise Tuominen, George Ngo, Hannah Roddy
+          & Hok Uy
+        </span>
+        <span class="column has-text-right">
+          <strong>&copy; 2021 Pokemon Battle</strong>
+        </span>
+      </div>
     </footer>
     <!-- "FOOTER INFORMATION" ENDS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
+
+
+
