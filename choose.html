@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/choose.css">
     <title>Pokemon</title>
 </head>
 
@@ -15,8 +16,8 @@
     <nav id="header" class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a href="./index.html" class="navbar-item">
-                <h1 class="title">Choose Your Pokemon!</h1>
-                <a href="http://pokemondb.net/pokedex/pikachu"><img src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/pikachu-lets-go.png" alt="Pikachu"></a>
+                <span><h1 class="title">Pokemon Battle</h1></span>
+                <span><img src="./assets/image/pikachu-lets-go.png" alt="Pikachu Love"></span>
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="poke-nav">
                 <span aria-hidden="true"></span>
@@ -28,7 +29,6 @@
             <div class="navbar-end">
                 <a href="./index.html" class="navbar-item">Home</a>
                 <a href="./choose.html" class="navbar-item">Choose</a>
-                <a href="#" class="navbar-item">Fight</a>
                 <a href="./high-score.html" class="navbar-item">Winners</a>
             </div>
         </div>
@@ -36,24 +36,53 @@
 
     <!-- Main section -->
     <section>
-        <a href="http://pokemondb.net/pokedex/charizard"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard"></a>
-        <a href="http://pokemondb.net/pokedex/pikachu"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pikachu"></a>
-        <a href="http://pokemondb.net/pokedex/dragonite"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/dragonite.gif" alt="Dragonite"></a>
-        <a href="http://pokemondb.net/pokedex/rapidash"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/rapidash.gif" alt="Rapidash"></a>
-        <a href="http://pokemondb.net/pokedex/blastoise"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif" alt="Blastoise"></a>
-        <a href="http://pokemondb.net/pokedex/cubone"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/cubone.gif" alt="Cubone"></a>
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard">
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pikachu">
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/dragonite.gif" alt="Dragonite">
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/rapidash.gif" alt="Rapidash">
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif" alt="Blastoise">
+        <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/cubone.gif" alt="Cubone">
 
         <br>
-        <button class="charizard">Charizard, <br>I Choose You!</button>
-        <button class="pikachu">Pikachu, <br>I Choose You!</button>
-        <button class="dragonite">Dragonite, <br>I Choose You!</button>
-        <button class="rapidash">Rapidash, <br>I Choose You!</button>
-        <button class="blastoise">Blastoise, <br>I Choose You!</button>
-        <button class="cubone">Cubone, <br>I Choose You!</button>
-
+        <button id="charizard" class="button">Charizard, <br>I Choose You!</button>
+        <button id="pikachu" class="button">Pikachu, <br>I Choose You!</button>
+        <button id="dragonite" class="button">Dragonite, <br>I Choose You!</button>
+        <button id="rapidash" class="button">Rapidash, <br>I Choose You!</button>
+        <button id="blastoise" class="button">Blastoise, <br>I Choose You!</button>
+        <button id="cubone" class="button">Cubone, <br>I Choose You!</button>
     </section>
     
-    
+    <div id="player-modal" class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-content">
+                    <h5 class="card-title">Enter your name trainer:</h5>
+                    <input id="player-name" class="input" type="text" placeholder="Your Name">
+                </div>
+                <div class="card-footer">
+                    <a id="player-ok" href="" class="card-footer-item">Ok</a>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <div id="error-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="card">
+              <div id="error-message" class="card-content">
+              </div>
+              <div class="card-footer">
+                  <a href="" class="card-footer-item">Ok</a>
+              </div>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
     <!-- "FOOTER INFORMTION" STARTS -->
     <footer class="footer">
         <div class="columns is-mobile content">
