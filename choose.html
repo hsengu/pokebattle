@@ -1,75 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Pokemon</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Navbar -->
-    <nav id="header" class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a href="./index.html" class="navbar-item">
-                <h1 class="title">Choose Your Pokemon!</h1>
-                <a href="http://pokemondb.net/pokedex/pikachu"><img src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/pikachu-lets-go.png" alt="Pikachu"></a>
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="poke-nav">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+    <nav
+      id="header"
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a href="./index.html" class="navbar-item">
+          <h1 class="title">Choose Your Pokemon!</h1>
+          <a href="http://pokemondb.net/pokedex/pikachu"
+            ><img
+              src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/pikachu-lets-go.png"
+              alt="Pikachu"
+          /></a>
+        </a>
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="poke-nav"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="poke-nav" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="./index.html" class="navbar-item">Home</a>
+          <a href="./choose.html" class="navbar-item">Choose</a>
+          <a href="#" class="navbar-item">Fight</a>
+          <a href="./high-score.html" class="navbar-item">Winners</a>
         </div>
-        <div id="poke-nav" class="navbar-menu">
-            <div class="navbar-end">
-                <a href="./index.html" class="navbar-item">Home</a>
-                <a href="./choose.html" class="navbar-item">Choose</a>
-                <a href="#" class="navbar-item">Fight</a>
-                <a href="./high-score.html" class="navbar-item">Winners</a>
-            </div>
-        </div>
+      </div>
     </nav>
 
     <!-- Main section -->
     <section>
-        <a href="http://pokemondb.net/pokedex/charizard"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard"></a>
-        <a href="http://pokemondb.net/pokedex/pikachu"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pikachu"></a>
-        <a href="http://pokemondb.net/pokedex/dragonite"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/dragonite.gif" alt="Dragonite"></a>
-        <a href="http://pokemondb.net/pokedex/rapidash"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/rapidash.gif" alt="Rapidash"></a>
-        <a href="http://pokemondb.net/pokedex/blastoise"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif" alt="Blastoise"></a>
-        <a href="http://pokemondb.net/pokedex/cubone"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/cubone.gif" alt="Cubone"></a>
+      <div class="columns">
+        <div class="column">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/charizard.png" alt="Charizard">
+          <br />
+          <button class="charizard">Charizard, <br />I Choose You!</button>
+        </div>
 
-        <br>
-        <button class="charizard">Charizard, <br>I Choose You!</button>
-        <button class="pikachu">Pikachu, <br>I Choose You!</button>
-        <button class="dragonite">Dragonite, <br>I Choose You!</button>
-        <button class="rapidash">Rapidash, <br>I Choose You!</button>
-        <button class="blastoise">Blastoise, <br>I Choose You!</button>
-        <button class="cubone">Cubone, <br>I Choose You!</button>
+        <div class="column">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png" alt="Pikachu">
+          <br />
+          <button class="pikachu">Pikachu, <br />I Choose You!</button>
+        </div>
 
+        <div class="column">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/dragonite.png" alt="Dragonite">
+          <br />
+          <button class="dragonite">Dragonite, <br />I Choose You!</button>
+        </div>
+
+        <div class="column">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/rapidash.png" alt="Rapidash">
+          <br />
+          <button class="rapidash">Rapidash, <br />I Choose You!</button>
+        </div>
+
+        <div class="column">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/blastoise.png" alt="Blastoise">
+          <br />
+          <button class="blastoise">Blastoise, <br />I Choose You!</button>
+        </div>
+
+        <div class="column">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/cubone.png" alt="Cubone">
+            <br
+          />
+          <button class="cubone">Cubone, <br />I Choose You!</button>
+        </div>
+      </div>
     </section>
-    
-    
+
     <!-- "FOOTER INFORMTION" STARTS -->
     <footer class="footer">
-        <div class="columns is-mobile content">
-            <span class="column is-four-fifths has-text-left">
-                <strong>Created By</strong> Denise Tuominen, George Ngo, Hannah Roddy & Hok Uy
-            </span>
-            <span class="column has-text-right">
-                <strong>&copy; 2021 Pokemon Battle</strong>
-            </span>
-        </div>
+      <div class="columns is-mobile content">
+        <span class="column is-four-fifths has-text-left">
+          <strong>Created By</strong> Denise Tuominen, George Ngo, Hannah Roddy
+          & Hok Uy
+        </span>
+        <span class="column has-text-right">
+          <strong>&copy; 2021 Pokemon Battle</strong>
+        </span>
+      </div>
     </footer>
     <!-- "FOOTER INFORMATION" ENDS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
-
-
