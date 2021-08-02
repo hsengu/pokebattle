@@ -11,11 +11,18 @@ var rival = {
 var pokemon;
 var location;
 var movesList = [];
+var coords = [ "27.17400606300552,78.0422513023935",
+               "51.17877711750124,-1.826188341180512",
+               "35.6244244,139.7755421",
+               "43.610491,-116.197901" ];
+var key = "key=AIzaSyAR0OAOh4CUIX7hn6cR2JnMN5_cRf6-bx4&";
+var arenaLocation;
 
 function getPokemon(trainer, choice) {
   if(choice === null)
     choice = Math.floor(Math.random() * 151);
-  fetch("https://pokeapi.co/api/v2/pokemon/" + choice).then(function (response) {
+
+  fetch("https://pokeapi.co/api/v2/pokemon/" + choice).then(function(response) {
     if(response.ok)
       return response.json();
     else {
@@ -37,7 +44,6 @@ function getPokemon(trainer, choice) {
       },
       sprite: (trainer === rival) ? data.sprites.versions['generation-v']['black-white'].animated.front_default : data.sprites.versions['generation-v']['black-white'].animated.back_default
     };
-      //console.log(data);
 
       var apiRequests = [];
       for(var i = 0; i < data.moves.length; i++) {
@@ -67,24 +73,52 @@ function getPokemon(trainer, choice) {
       })).then(function() {
         pokemon.moves = movesList;
         movesList = [];
-        //console.log(pokemon.moves);
       });
 
     if(trainer === "rival") {
       rival.pokemon = pokemon;
       sessionStorage.setItem("rival", JSON.stringify(rival));
-      console.log(rival);
     }
     else {
       player.pokemon = pokemon;
       sessionStorage.setItem("player", JSON.stringify(player));
-      console.log(player)
     }
   });
 }
 
 function getLocation() {
+  fetch("https://maps.googleapis.com/maps/api/streetview?location=" + coords[Math.floor(Math.random() + coords.length)] + "&size=1400x1400&heading=70&pitch=0&" + key).then(function(response) { 
+  if(response.ok) {
+      arenaLocation = "https://maps.googleapis.com/maps/api/streetview?location=" + coords[Math.floor(Math.random() * coords.length)] + "&size=1400x1400&heading=70&pitch=0&" + key;
+      sessionStorage.setItem("location", JSON.stringify(arenaLocation));
+    } else {
+      var errorEl = $("#error-modal");
+      errorEl.addClass("is-active");
+      $("#error-message").html("<p><strong>API Error:</strong> " + response.status + " - " + response.message + "</p>");
+    }
+  });
+}
 
+function startMatch() {
+  var versusModalEl = $("#versus-modal");
+  versusModalEl.addClass("is-active");
+
+  var versusEl = $("#versus");
+  versusEl.text(player.name + " VS. " + rival.name);
+
+  var countdown = $("#countdown").text();
+  console.log(countdown);
+  
+  var countTimer = function() {
+    if(countdown > 0) {
+      $("#countdown").text(countdown--);
+      setTimeout(countTimer, 1000);
+    } else {
+      window.location = "./fight.html";
+    }
+  }
+
+  countTimer();
 }
 
 $("#player-ok").click(function(event) {
@@ -102,4 +136,5 @@ $(".button").click(function() {
   getPokemon("player", pick);
   getPokemon("rival", null);
   getLocation();
+  startMatch();
 });
