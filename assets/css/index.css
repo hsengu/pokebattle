@@ -1,20 +1,15 @@
 :root {
-    --bots-color: #ff5757;
+  --bots-color: #ff5757;
 }
 
-.title1  {
-  display: block;
-  float: right;
-}
-
-.title2  {
+.title1, .title2 {
   display: block;
   float: right;
 }
 
 
 
-.rules h2{
+.rules h2 {
   text-align: center;
   font-size: 48px;
 }
@@ -33,7 +28,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .options {
@@ -125,4 +119,13 @@
   background: radial-gradient(ellipse at center, #f64c4c, #ff514f00);
 
   opacity: 0;
+}
+
+@media screen and (max-width: 568px) {
+  .title1, .title2 {
+    display: block;
+    margin-left: auto;
+    float:none;
+  }
+
 }
