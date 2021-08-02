@@ -1,13 +1,15 @@
 :root {
-    --bots-color: #ff5757;
+  --bots-color: #ff5757;
 }
 
-.top-right a,
-.bottom-right a {
+.title1, .title2 {
+  display: block;
   float: right;
 }
 
-.rules h2{
+
+
+.rules h2 {
   text-align: center;
   font-size: 48px;
 }
@@ -23,9 +25,9 @@
 }
 
 .btn-section {
-  position: absolute;
-  bottom: 225px;
-  right: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .options {
@@ -117,4 +119,13 @@
   background: radial-gradient(ellipse at center, #f64c4c, #ff514f00);
 
   opacity: 0;
+}
+
+@media screen and (max-width: 568px) {
+  .title1, .title2 {
+    display: block;
+    margin-left: auto;
+    float:none;
+  }
+
 }
