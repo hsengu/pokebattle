@@ -107,7 +107,6 @@ function startMatch() {
   versusEl.text(player.name + " VS. " + rival.name);
 
   var countdown = $("#countdown").text();
-  console.log(countdown);
   
   var countTimer = function() {
     if(countdown > 0) {
@@ -117,7 +116,6 @@ function startMatch() {
       window.location = "./fight.html";
     }
   }
-
   countTimer();
 }
 
