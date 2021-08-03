@@ -121,6 +121,9 @@ function startMatch() {
 $("#player-ok").click(function(event) {
   event.preventDefault();
   player.name = $("#player-name").val();
+  if(player.name === "") {
+    player.name = "Ash";
+  }
   $(this).parent().parent().parent().parent().removeClass("is-active");
 });
 
