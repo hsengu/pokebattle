@@ -42,7 +42,7 @@ function getPokemon(trainer, choice) {
         special_defense: data.stats[4].base_stat,
         speed: data.stats[5].base_stat,
       },
-      sprite: (trainer === rival) ? data.sprites.versions['generation-v']['black-white'].animated.front_default : data.sprites.versions['generation-v']['black-white'].animated.back_default
+      sprite: (trainer === "rival") ? data.sprites.versions['generation-v']['black-white'].animated.front_default : data.sprites.versions['generation-v']['black-white'].animated.back_default
     };
 
       var apiRequests = [];
@@ -73,16 +73,17 @@ function getPokemon(trainer, choice) {
       })).then(function() {
         pokemon.moves = movesList;
         movesList = [];
-      });
 
-    if(trainer === "rival") {
-      rival.pokemon = pokemon;
-      sessionStorage.setItem("rival", JSON.stringify(rival));
-    }
-    else {
-      player.pokemon = pokemon;
-      sessionStorage.setItem("player", JSON.stringify(player));
-    }
+        if(trainer === "rival") {
+          rival.pokemon = pokemon;
+          sessionStorage.setItem("rival", JSON.stringify(rival));
+          getLocation();
+        } else {
+          player.pokemon = pokemon;
+          sessionStorage.setItem("player", JSON.stringify(player));
+          getPokemon("rival", null);
+        }
+      });
   });
 }
 
@@ -91,6 +92,7 @@ function getLocation() {
   if(response.ok) {
       arenaLocation = "https://maps.googleapis.com/maps/api/streetview?location=" + coords[Math.floor(Math.random() * coords.length)] + "&size=1400x1400&heading=70&pitch=0&" + key;
       sessionStorage.setItem("location", JSON.stringify(arenaLocation));
+      startMatch();
     } else {
       var errorEl = $("#error-modal");
       errorEl.addClass("is-active");
@@ -122,8 +124,11 @@ function startMatch() {
 $("#player-ok").click(function(event) {
   event.preventDefault();
   player.name = $("#player-name").val();
+  if(player.name === "") {
+    player.name = "Ash";
+  }
   $(this).parent().parent().parent().parent().removeClass("is-active");
-})
+});
 
 $(".modal-close").click(function () {
   $(this).parent().removeClass("is-active");
@@ -132,7 +137,4 @@ $(".modal-close").click(function () {
 $(".button").click(function() {
   var pick = $(this).attr("id");
   getPokemon("player", pick);
-  getPokemon("rival", null);
-  getLocation();
-  startMatch();
 });
