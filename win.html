@@ -9,6 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/win.css" />
     <title>Pokemon</title>
   </head>
 
@@ -48,14 +49,18 @@
         </div>
       </div>
     </nav>
-    <div class="section">
+    <div class="section ">
       <div id="win-page" class="verdict">
         <h2>Pokemon Master!</h2>
         <div id="badge">
           <img src="./assets/image/badge.jpg" alt="trophy badge of victoy" />
         </div>
-        <h3>You won! Congragulations, you earned a battleground badge!</h3>
+        <h3>You won! Congratulations, you earned a battleground badge!</h3>
+        <div>
+          <button id="winner">WINNER </button> 
+        </div>
       </div>
+
 
       <div id="lose-page" class="verdict">
         <h2>Better luck next time!</h2>
@@ -65,20 +70,22 @@
         <h3>You lost. Rest up with your pokemon and try again!</h3>
       </div>
     </div>
-    <!-- "FOOTER INFORMTION" STARTS -->
-    <footer>
-      <div>
-        <div>
-          <h3>
-            Denise Tuominen, George Ngo,<br />
-            Hannah Roddy & Hok Uy
-          </h3>
-        </div>
-        <div class="placement-end">&copy; 2021 Pokemon Battle</div>
-      </div>
-    </footer>
-    <!-- "FOOTER INFORMATION" ENDS -->
+<!-- "FOOTER INFORMTION" STARTS -->
+<footer class="footer">
+  <div class="columns is-mobile content">
+    <span class="column is-four-fifths has-text-left">
+      <strong>Created By</strong> Denise Tuominen, George Ngo, Hannah Roddy
+      & Hok Uy
+    </span>
+    <span class="column has-text-right">
+      <strong>&copy; 2021 Pokemon Battle</strong>
+    </span>
+  </div>
+</footer>
+<!-- "FOOTER INFORMATION" ENDS -->
 
     <script src="./assets/js/script.js"></script>
+    <script src="assets/js/win.js"></script>
+
   </body>
 </html>
