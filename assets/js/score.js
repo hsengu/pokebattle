@@ -1,26 +1,27 @@
 var ulEl = document.getElementById("championList");
 
 // Choose page needs to match
-var trainerInputEl = trainerInputEl.value;
+var trainerInputEl = document.getElementById("player-name");
+var trainer = [];
 
-var endGame = function() {
-  
+var endGame = function(event) {
+  event.preventDefault();
+var winner = trainerInputEl.value;
+
+var newWinner = document.createElement("li");
+newWinner.textContent = winner;
+ulEl.appendChild(newWinner);
+
     // check localStorage for winners, if no winners
-    var win = localStorage.getItem("win");
-    if (win === null) {
-      win = "No Masters";
+    if (JSON.parse(localStorage.getItem("player-name")) === null) {
+      trainer = [];
+    } else {
+      //parse out the items in local storage to JSON
+      trainer = JSON.parse(localStorage.getItem("player-name"));
     }
+   trainer.push(winner);
+    localStorage.setItem("player-name", JSON.stringify(trainer));
 
-    // if winners exist set the win name
-    if (trainerInfo.win === win) {
-      localStorage.setItem("win", trainerInfo.name);
-    }
-    var winner = trainerInputEl.value
-
-   
-    var newWinner = document.createElement("li");
-    newWinner.textContent = winner;
-    searchEl.appendChild(newWinner);
 };
 
 endGame ();

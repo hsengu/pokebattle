@@ -9,6 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/halloffame.css">
     <title>Pokemon</title>
   </head>
 
@@ -40,20 +41,20 @@
         <div class="navbar-end">
           <a href="./index.html" class="navbar-item">Home</a>
           <a href="./choose.html" class="navbar-item">Choose</a>
-          <a href="#" class="navbar-item">Fight</a>
           <a href="./high-score.html" class="navbar-item">Winners</a>
         </div>
       </div>
     </nav>
 
     <!-- Main section -->
- <div class = "hallOfFame">
-   <h1> Hall of Fame </h1>
-   <div class="error"></div>
-   <ul id="championList">
-     
-   </ul>
- </div>
+    <div class="winnerList">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2880px-International_Pok%C3%A9mon_logo.svg.png">
+    <h1 id="HOF">Hall of Fame</h1>
+  </div>
+    <div class="hallOfFame">
+      <div class="error"></div>
+      <ul id="championList"></ul>
+    </div>
 
     <!-- "FOOTER INFORMTION" STARTS -->
     <footer class="footer">
@@ -78,4 +79,3 @@
     <script src="assets/js/score.js"></script>
   </body>
 </html>
-
