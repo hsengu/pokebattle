@@ -3,6 +3,8 @@ var rival;
 var arenaLocation;
 var playerMoveSet = [];
 var rivalMoveSet = [];
+var winners;
+var end = false;
 
 function showDmg(target, damage) {
     var hpBar = $("#" + target + "-hp-bar");
@@ -18,11 +20,11 @@ function showDmg(target, damage) {
     if(damage < value)  {
         hpBar[0].value -= damage;
         hp.text(value - damage);
-        endMatch(target);
-        return;
     } else {
         hpBar[0].value = 0;
         hp.text("0");
+        endMatch(target);
+        end = true;
     }
 
     if(hpBar[0].value < 75) {
@@ -35,8 +37,9 @@ function showDmg(target, damage) {
         hpBar.addClass("is-danger");
     }
 
-    updateLog(target, damage);
-}
+    if(!end)
+        updateLog(target, damage);
+};
 
 function updateLog(target, damage) {
     var attacker = "";
@@ -48,11 +51,11 @@ function updateLog(target, damage) {
         attacker = $("#rival-name")[0].textContent;
 
     logElement.value = attacker + " attacked " + $("#" + target + "-name")[0].textContent + " for " + damage + " damage.\n" + logElement.value;
-}
+};
 
 function calculateDmg(move) {
     return Math.floor(Math.random() * 50);
-}
+};
 
 function loadData() {
     player = JSON.parse(sessionStorage.getItem("player"));
@@ -104,18 +107,47 @@ function loadData() {
         var attack = $(this)[0].textContent;
         $(':button').prop('disabled', true);
 
+        showDmg("rival", calculateDmg(attack));
         setTimeout(function() {
-            $(':button').prop('disabled', false);
-            showDmg("player", calculateDmg(attack));
+            if(!end) {
+                $(':button').prop('disabled', false);
+                showDmg("player", calculateDmg(attack));
+            }
         }, 3000);
 
-        showDmg("rival", calculateDmg(attack));
+        
     })
-}
+};
 
-function endMatch() {
-    
-}
+function endMatch(target) {
+    winners = localStorage.getItem("winners");
+    console.log(winners);
+    winners = winners ? JSON.parse(winners) : [];
+    var attacker;
+
+    $(':button').prop('disabled', true);
+    if(target !== "player") {
+        var tempWin = {
+            name: player.name,
+            pokemon: player.pokemon.name
+        }
+
+        winners.push(tempWin);
+        localStorage.setItem("winners", JSON.stringify(winners));
+    }
+
+    if(target === "rival")
+        attacker = $("#player-name")[0].textContent;
+    else
+        attacker = $("#rival-name")[0].textContent;
+
+    var logElement = $("#battle-log")[0];
+    logElement.value = $("#" + target + "-name")[0].textContent + " has fainted.\n" + logElement.value;
+
+    setTimeout(function() {
+        window.location = "./win.html";
+    }, 5000);
+};
 
 $(document).ready(function () {
     loadData();
