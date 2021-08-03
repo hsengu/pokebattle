@@ -5,6 +5,8 @@
 
 #stage {
     height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .arena {
@@ -14,14 +16,14 @@
 }
 
 .actions-column, .log-column {
-    min-width: 280px;
+    min-width: 350px;
 }
 
 #battle-log textarea {
     font-size: 14px;
 }  
 
-#player-pokemon img, #rival-pokemon img {
+#player-pokemon, #rival-pokemon {
     transform-origin: top left;
     transform: scale(2);
 }
