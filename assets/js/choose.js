@@ -122,7 +122,7 @@ $("#player-ok").click(function(event) {
   event.preventDefault();
   player.name = $("#player-name").val();
   $(this).parent().parent().parent().parent().removeClass("is-active");
-})
+});
 
 $(".modal-close").click(function () {
   $(this).parent().removeClass("is-active");
