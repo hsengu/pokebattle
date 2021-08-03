@@ -1,4 +1,4 @@
-# Pokemon Battle
+# Pokemon BattleGround
 
 ## Purpose
 Description - A Pokemon Battle Simulator that allows you to become the best there ever was. Become a trainer, select your Pokemon and battle rival to become a Pokemon Master!
