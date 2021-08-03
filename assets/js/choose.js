@@ -73,16 +73,15 @@ function getPokemon(trainer, choice) {
       })).then(function() {
         pokemon.moves = movesList;
         movesList = [];
-      });
 
-    if(trainer === "rival") {
-      rival.pokemon = pokemon;
-      sessionStorage.setItem("rival", JSON.stringify(rival));
-    }
-    else {
-      player.pokemon = pokemon;
-      sessionStorage.setItem("player", JSON.stringify(player));
-    }
+        if(trainer === "rival") {
+          rival.pokemon = pokemon;
+          sessionStorage.setItem("rival", JSON.stringify(rival));
+        } else {
+          player.pokemon = pokemon;
+          sessionStorage.setItem("player", JSON.stringify(player));
+        }
+      });
   });
 }
 
