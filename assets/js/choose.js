@@ -51,8 +51,8 @@ function getPokemon(trainer, choice) {
       }
 
       Promise.all(apiRequests).then(responses => {
-        for(let response of responses) {
-          if(response.status !== 200) {
+        for(var response of responses) {
+          if(!response.ok) {
             var errorEl = $("#error-modal");
             errorEl.addClass("is-active");
             $("#error-message").html("<p><strong>API Error:</strong> " + response.status + " - " + response.message + "</p>");

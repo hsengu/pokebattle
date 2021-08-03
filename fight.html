@@ -16,7 +16,7 @@
     <nav id="header" class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a href="./index.html" class="navbar-item">
-                <span><h1 class="title">Pokemon Battle</h1></span>
+                <span><h1 class="title">Pokemon Battleground</h1></span>
                 <span><img src="./assets/image/pikachu-lets-go.png" alt="Pikachu Love"></span>
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="poke-nav">
@@ -48,8 +48,8 @@
                                             <div class="card">
                                                 <div class="card-content">
                                                     <progress id="rival-hp-bar" class="progress is-success is-small" value="100" max="100">100%</progress>
-                                                    <p>HP: <span id="rival-current-hp">100</span> / <span id="rival-max-hp">100</span></p>
-                                                    <p><strong id="rival-name">Kadabra</strong></p>
+                                                    <p>HP: <span id="rival-current-hp"></span> / <span id="rival-max-hp"></span></p>
+                                                    <p><strong id="rival-name"></strong></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,8 +67,8 @@
                         </div>
                         <div class="column is-half arena">
                             <div class="columns has-text-centered is-vcentered">
-                                <div id="rival-pokemon" class="column">
-                                    <img src="https://img.pokemondb.net/sprites/black-white/anim/shiny/kadabra.gif" alt="Kadabra"/>
+                                <div class="column">
+                                    <img id="rival-pokemon" src="" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -76,8 +76,8 @@
                     <div class="columns is-mobile is-centered is-vcentered">
                         <div  class="column is-half arena">
                             <div class="columns is-vcentered">
-                                <div id="player-pokemon" class="column">
-                                    <img src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/pikachu.gif" alt="Pikachu"/>
+                                <div class="column">
+                                    <img id="player-pokemon" src="" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -97,8 +97,8 @@
                                             <div class="card">
                                                 <div class="card-content">
                                                     <progress id="player-hp-bar" class="progress is-success is-small" value="100" max="100">100%</progress>
-                                                    <p>HP: <span id="player-current-hp">100</span> / <span id="player-max-hp">100</span></p>
-                                                    <p><strong id="player-name">Pikachu</strong></p>
+                                                    <p>HP: <span id="player-current-hp"></span> / <span id="player-max-hp"></span></p>
+                                                    <p><strong id="player-name"></strong></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,24 +115,24 @@
                                 <div class="column">
                                     <div class="columns">
                                         <div class="column">
-                                            <button class="button is-primary">Attack 1</button>
+                                            <button id="attack1" class="button is-primary attack"></button>
                                         </div>
                                     </div>
                                     <div class="columns">
                                         <div class="column">
-                                            <button class="button is-primary">Attack 2</button>
+                                            <button id="attack2" class="button is-primary attack"></button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="column">
                                     <div class="columns">
                                         <div class="column">
-                                            <button class="button is-primary">Attack 3</button>
+                                            <button id="attack3" class="button is-primary attack"></button>
                                         </div>
                                     </div>
                                     <div class="columns">
                                         <div class="column">
-                                            <button class="button is-primary">Attack 4</button>
+                                            <button id="attack4" class="button is-primary attack"></button>
                                         </div>
                                     </div>
                                 </div>
