@@ -6,7 +6,8 @@ winner = winner ? JSON.parse(winner) : null;
 var winners = localStorage.getItem("winner");
 winners = winners ? JSON.parse(winners) : [];
 
-winners.push(winner);
+if(winner)
+  winners.push(winner);
 sessionStorage.removeItem("winner");
 localStorage.setItem("winner", JSON.stringify(winners));
 
