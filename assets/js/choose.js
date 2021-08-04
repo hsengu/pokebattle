@@ -88,7 +88,7 @@ function getPokemon(trainer, choice) {
 }
 
 function getLocation() {
-  fetch("https://maps.googleapis.com/maps/api/streetview?location=" + coords[Math.floor(Math.random() + coords.length)] + "&size=1400x1400&heading=70&pitch=0&" + key).then(function(response) { 
+  fetch("https://maps.googleapis.com/maps/api/streetview?location=" + coords[Math.floor(Math.random() * coords.length)] + "&size=1400x1400&heading=70&pitch=0&" + key).then(function(response) { 
   if(response.ok) {
       arenaLocation = "https://maps.googleapis.com/maps/api/streetview?location=" + coords[Math.floor(Math.random() * coords.length)] + "&size=1400x1400&heading=70&pitch=0&" + key;
       sessionStorage.setItem("location", JSON.stringify(arenaLocation));
