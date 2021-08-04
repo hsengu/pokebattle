@@ -7,7 +7,7 @@
 }
 
 .button {
-  background-color: #ffe5d4;
+  background-color: var(--border-color);
   text-align: center;
   padding: 35px 20px;
   font-size: 20px;
