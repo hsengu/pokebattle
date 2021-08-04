@@ -2,12 +2,11 @@
   --bots-color: #ff5757;
 }
 
-.title1, .title2 {
+.title1,
+.title2 {
   display: block;
   float: right;
 }
-
-
 
 .rules h2 {
   text-align: center;
@@ -51,8 +50,8 @@
 }
 
 .pokeball {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -121,11 +120,11 @@
   opacity: 0;
 }
 
-@media screen and (max-width: 568px) {
-  .title1, .title2 {
+@media screen and (max-width: 780px) {
+  .title1,
+  .title2 {
     display: block;
     margin-left: auto;
-    float:none;
+    float: none;
   }
-
 }
