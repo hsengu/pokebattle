@@ -137,4 +137,5 @@ $(".modal-close").click(function () {
 $(".button").click(function() {
   var pick = $(this).attr("id");
   getPokemon("player", pick);
+  $(':button').prop('disabled', true);
 });
