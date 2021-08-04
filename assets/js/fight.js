@@ -55,7 +55,7 @@ function updateLog(target, damage) {
 };
 
 function calculateDmg(move) {
-    return Math.floor(Math.random() * 50);
+    return Math.floor((Math.random() * 23) + 1);
 };
 
 function loadData() {

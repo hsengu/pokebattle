@@ -16,7 +16,7 @@
 }
 
 .actions-column, .log-column {
-    min-width: 350px;
+    min-width: 310px;
 }
 
 #battle-log textarea {
