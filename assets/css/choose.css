@@ -1,15 +1,17 @@
-.sprits{
-    margin-left: 125px;
-    margin-top: 50px;
-    margin-top: 25PX;
-    text-align: center;
+.sprits {
+  margin-left: 25px;
+  margin-top: 50px;
+  margin-right: 75;
+  text-align: center;
+ 
 }
 
 .button {
-    background-color:rgba(255, 255, 0, 0.527);
-    text-align: center;
-    padding: 35px 20px;
-    font-size: 20px;
-    margin-top: 25px;
-    border-radius: 15%;
-  }
+  background-color: #ffe5d4;
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 20px;
+  margin-top: 15px;
+  border-radius: 15%;
+  font-weight: bold;
+}
