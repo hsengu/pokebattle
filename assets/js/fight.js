@@ -27,11 +27,11 @@ function showDmg(target, damage) {
         end = true;
     }
 
-    if(hpBar[0].value < 75) {
+    if(hpBar[0].value < (player.pokemon.stats.health * .75)) {
         hpBar.removeClass("is-success");
         hpBar.addClass("is-warning");
     }
-    if (hpBar[0].value <= 25) {
+    if (hpBar[0].value <= player.pokemon.stats.health * .25) {
         hpBar.removeClass("is-success");
         hpBar.removeClass("is-warning");
         hpBar.addClass("is-danger");
@@ -129,11 +129,13 @@ function endMatch(target) {
     if(target !== "player") {
         var tempWin = {
             name: player.name,
-            pokemon: player.pokemon.name
+            pokemon: player.pokemon.name[0].toUpperCase() + player.pokemon.name.substring(1)
         }
 
-        winners.push(tempWin);
-        localStorage.setItem("winners", JSON.stringify(winners));
+        sessionStorage.setItem("winner", JSON.stringify(tempWin));
+        sessionStorage.removeItem("player");
+        sessionStorage.removeItem("rival");
+        sessionStorage.removeItem("location");
     }
 
     if(target === "rival")
