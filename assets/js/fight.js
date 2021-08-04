@@ -23,6 +23,7 @@ function showDmg(target, damage) {
     } else {
         hpBar[0].value = 0;
         hp.text("0");
+        updateLog(target, damage);
         endMatch(target);
         end = true;
     }
@@ -105,9 +106,10 @@ function loadData() {
 
     $(".attack").click(function() {
         var attack = $(this)[0].textContent;
+        
         $(':button').prop('disabled', true);
-
         showDmg("rival", calculateDmg(attack));
+
         setTimeout(function() {
             if(!end) {
                 $(':button').prop('disabled', false);
