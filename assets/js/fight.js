@@ -146,7 +146,9 @@ function endMatch(target) {
     logElement.value = $("#" + target + "-name")[0].textContent + " has fainted.\n" + logElement.value;
 
     setTimeout(function() {
-        sessionStorage.clear();
+        sessionStorage.removeItem("player");
+        sessionStorage.removeItem("rival");
+        sessionStorage.removeItem("location");
         window.location = "./win.html";
     }, 5000);
 };
