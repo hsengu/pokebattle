@@ -25,5 +25,14 @@
     width: 20%;
     border-radius: 25%;
   }
+
+  #winner {
+    background-color: var(--border-color);
+    text-align: center;
+    padding: 15px 15px;
+    font-size: 25px;
+    margin-top: 25px;
+    border-radius: 15%;
+  }
   
   /* WIN-LOSE STYLE END */

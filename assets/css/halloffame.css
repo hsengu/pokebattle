@@ -1,0 +1,25 @@
+#HOF {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+img {
+    max-width:30%;
+}
+
+.winnerList {
+    text-align: center;
+    float: none;
+    width: fit-content;
+    margin: auto;
+    
+}
+
+.hallOfFame {
+    text-align: center;
+    float: none;
+    width: fit-content;
+    margin: auto;
+}
