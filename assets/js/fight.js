@@ -6,6 +6,7 @@ var rivalMoveSet = [];
 var winners;
 var end = false;
 
+// Function to update HP and HPBar when damage is dealth.
 function showDmg(target, damage) {
     var hpBar = $("#" + target + "-hp-bar");
     var hp = $("#" + target + "-current-hp");
@@ -42,6 +43,7 @@ function showDmg(target, damage) {
         updateLog(target, damage);
 };
 
+// Function to Update battle log with last action.
 function updateLog(target, damage) {
     var attacker = "";
     var logElement = $("#battle-log")[0];
@@ -54,10 +56,12 @@ function updateLog(target, damage) {
     logElement.value = attacker + " attacked " + $("#" + target + "-name")[0].textContent + " for " + damage + " damage.\n" + logElement.value;
 };
 
+// Function to calculate some damage
 function calculateDmg(move) {
-    return Math.floor((Math.random() * 23) + 1);
+    return Math.floor((Math.random() * 23) + 1);        // Currently just returns a random number between 1 and 23, to demonstrate MVP
 };
 
+// Load Data Pokemon and Player data from session storage that was fetched from previous page.
 function loadData() {
     player = JSON.parse(sessionStorage.getItem("player"));
     rival = JSON.parse(sessionStorage.getItem("rival"));
@@ -121,6 +125,7 @@ function loadData() {
     })
 };
 
+// A victor has been determined, so end the match.
 function endMatch(target) {
     winners = localStorage.getItem("winners");
     console.log(winners);
@@ -153,6 +158,7 @@ function endMatch(target) {
     }, 5000);
 };
 
+// Perform data load when webpage has fully loaded.
 $(document).ready(function () {
     loadData();
 });

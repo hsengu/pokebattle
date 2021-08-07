@@ -18,6 +18,7 @@ var coords = [ "27.17400606300552,78.0422513023935",
 var key = "key=AIzaSyAR0OAOh4CUIX7hn6cR2JnMN5_cRf6-bx4";
 var arenaLocation;
 
+// PokeAPI fetch function to get a Pokemon promises must return HTTP response 200 for all API calls to continue
 function getPokemon(trainer, choice) {
   if(choice === null)
     choice = Math.floor(Math.random() * 151);
@@ -87,6 +88,7 @@ function getPokemon(trainer, choice) {
   });
 }
 
+// API call for Google Street Maps Satic View API
 function getLocation() {
   var randomNum = Math.floor(Math.random() * coords.length);
   fetch("https://maps.googleapis.com/maps/api/streetview?location=" + coords[randomNum] + "&size=1400x1400&heading=70&pitch=0&" + key).then(function(response) { 
@@ -102,6 +104,7 @@ function getLocation() {
   });
 }
 
+// Function to start match after API Calls complete successfully.
 function startMatch() {
   var versusModalEl = $("#versus-modal");
   versusModalEl.addClass("is-active");
@@ -122,6 +125,7 @@ function startMatch() {
   countTimer();
 }
 
+// Event handlers for user interactions
 $("#player-ok").click(function(event) {
   event.preventDefault();
   player.name = $("#player-name").val();
