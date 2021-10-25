@@ -10,7 +10,7 @@ A Pokemon Battle Simulator that allows you to become the best there ever was. Be
 * JS
 * jQuery
 * PokeAPI
-* Google Maps Street Static View API
+* Google Maps Street Static View API (Removed API key)
 
 ## Screenshot
 ![Screenshot](./assets/Screenshots/001.jpg)

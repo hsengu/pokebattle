@@ -15,7 +15,7 @@ var coords = [ "27.17400606300552,78.0422513023935",
                "51.17877711750124,-1.826188341180512",
                "35.6244244,139.7755421",
                "43.610491,-116.197901" ];
-var key = "key=AIzaSyAR0OAOh4CUIX7hn6cR2JnMN5_cRf6-bx4";
+var key = "redacted";
 var arenaLocation;
 
 // PokeAPI fetch function to get a Pokemon promises must return HTTP response 200 for all API calls to continue
@@ -78,7 +78,8 @@ function getPokemon(trainer, choice) {
         if(trainer === "rival") {
           rival.pokemon = pokemon;
           sessionStorage.setItem("rival", JSON.stringify(rival));
-          getLocation();
+          //getLocation();
+          startMatch();
         } else {
           player.pokemon = pokemon;
           sessionStorage.setItem("player", JSON.stringify(player));
